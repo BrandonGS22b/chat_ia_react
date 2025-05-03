@@ -15,7 +15,7 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:8000/chat", { message: input });
+      const res = await axios.post("https://python-ia-0cfu.onrender.com/chat", { message: input });
       const aiMessage = { role: "ai", content: res.data.response };
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="chat-container">
-      <h1>🤖 Chat IA</h1>
+      <h1>🤖 Chat</h1>
       <div className="chat-box">
         {messages.map((msg, i) => (
           <div key={i} className={`message ${msg.role}`}>
